@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'ldrs/helix'
 import './index.css'; // Make sure to import the CSS file
 
 function App() {
@@ -66,11 +67,17 @@ function App() {
   };
 
   if (!hasLocation) {
-    return (
-      <div className="loading-container">
-        <div className="spinner"></div>
+    return (<>
+    <div className="spinner-center">
+        <l-helix
+          size="45"
+          speed="2.5"
+          color="black" 
+        ></l-helix>
         <p className='text'>fetching your location</p>
-      </div>
+        </div>
+        </>
+
     );
   }
 
